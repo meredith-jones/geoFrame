@@ -9,6 +9,10 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
 
+  def show
+    @chat = Chat.includes(:messages).find_by(id: params[:id])
+  end
+
   def create
     @chat_room = current_user.chat_rooms.build(chat_room_params)
     if @chat_room.save
