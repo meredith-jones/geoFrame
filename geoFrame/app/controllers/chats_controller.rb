@@ -11,6 +11,7 @@ class ChatsController < ApplicationController
 
   def show
     @chat = Chat.includes(:messages).find_by(id: params[:id])
+    @message = Message.new
   end
 
   def create
