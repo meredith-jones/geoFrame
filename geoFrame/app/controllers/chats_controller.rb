@@ -9,11 +9,6 @@ class ChatsController < ApplicationController
     @chat = Chat.new
   end
 
-  def show
-    @chat = Chat.includes(:messages).find_by(id: params[:id])
-    @message = Message.new
-  end
-
   def create
     @chat = current_user.chats.build(chat_params)
     if @chat.save
@@ -22,6 +17,11 @@ class ChatsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @chat = Chat.includes(:messages).find_by(id: params[:id])
+    @message = Message.new
   end
 
 private

@@ -1,12 +1,9 @@
 <h1><%= @chat.title %></h1>
 
-<div id="messages">
-  <%= render @chat.messages %>
-</div>
-
 <div id="messages" data-chat-id="<%= @chat.id %>">
   <%= render @chat.messages %>
 </div>
+<hr>
 
 <%= form_for @message, url: '#' do |f| %>
   <div class="form-group">
