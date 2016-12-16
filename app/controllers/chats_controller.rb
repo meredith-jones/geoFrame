@@ -3,6 +3,8 @@ class ChatsController < ApplicationController
 
   def index
     @chats = Chat.all
+    # @user_location = request.location.coordinates
+    @user_location = [37.5, 122.3]
   end
 
   def new
