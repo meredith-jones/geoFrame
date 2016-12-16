@@ -1,1 +1,10 @@
-<li><%= link_to "Enter #{chat.title}", chat_path(chat) %></li>
+ <% @chats.each do |chat| %>
+
+ <%= [chat.longitude.to_f, chat.latitude.to_f] %>
+ <%= Geocoder::Calculations.distance_between(@user_coords, [chat.longitude, chat.latitude]) %>
+
+
+  <% if Geocoder::Calculations.distance_between(@user_coords, [chat.longitude.to_f, chat.latitude.to_f]) <= 100 %>
+     <li><%= link_to "Enter #{chat.title}", chat_path(chat) %></li>
+    <% end %>
+  <% end %>

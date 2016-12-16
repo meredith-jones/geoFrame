@@ -17,10 +17,11 @@ ActiveRecord::Schema.define(version: 20161214011957) do
 
   create_table "chats", force: :cascade do |t|
     t.string   "title"
-    t.integer  "location",   default: [],              array: true
+    t.decimal  "longitude",  precision: 10, scale: 6
+    t.decimal  "latitude",   precision: 10, scale: 6
     t.integer  "user_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.index ["user_id"], name: "index_chats_on_user_id", using: :btree
   end
 

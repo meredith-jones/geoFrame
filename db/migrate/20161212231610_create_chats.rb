@@ -2,9 +2,9 @@ class CreateChats < ActiveRecord::Migration[5.0]
   def change
     create_table :chats do |t|
       t.string   :title
-      t.integer  :location, array: true, default: []
+      t.decimal    :longitude, :precision => 10, :scale => 6
+      t.decimal    :latitude, :precision => 10, :scale => 6
       t.references :user, foreign_key: true
-
       t.timestamps
     end
   end
