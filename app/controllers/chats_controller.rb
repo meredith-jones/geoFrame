@@ -3,13 +3,14 @@ class ChatsController < ApplicationController
 
   def index
     @chats = Chat.all
-    @user_coords = []
+    # @user_coords = []
     # REAL ACTUAL QUERY
     # search_result = Geocoder.search(current_user.current_sign_in_ip)
     # HARDCODED QUERY FOR TEST
-    search_result = Geocoder.search("204.57.220.1")
-    @user_coords << search_result[0].data['latitude']
-    @user_coords << search_result[0].data['longitude']
+    # search_result = Geocoder.search("204.57.220.1")
+    # @user_coords << search_result[0].data['latitude']
+    # @user_coords << search_result[0].data['longitude']
+    @user_coords = [37.604683 , -122.3975142]
   end
 
   def new

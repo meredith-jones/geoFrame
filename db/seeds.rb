@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(email: "robbie@robbie.com", password: "password")
-Chat.create(title: "seeded test", longitude: 37.6061, latitude: -122.3981, user_id: 1)
+Chat.create(title: "seeded test", longitude: 37.603527, latitude: -122.395669, user_id: 1)
